@@ -36,6 +36,7 @@ class TweetsController < ApplicationController
   # POST /tweets.xml
   def create
     @tweet = Tweet.new(params[:tweet])
+    @tweet.user_id = session[:user_id]
 
     respond_to do |format|
       if @tweet.save

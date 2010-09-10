@@ -2,6 +2,8 @@ require 'digest/sha1'
 
 class User < ActiveRecord::Base
   
+  has_many :tweets
+  
   validates_presence_of :name
   validates_uniqueness_of :name
   
