@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  
+  before_filter :authorize_admin, :except => [:index, :show, :edit]
+  
   # GET /users
   # GET /users.xml
   def index
@@ -34,7 +37,12 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user = User.find(params[:id])
+    if session[:is_admin]
+      id = params[:id]
+    else 
+      id = session[:user_id]
+    end 
+    @user = User.find(id)
   end
 
   # POST /users
@@ -80,4 +88,12 @@ class UsersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  protected
+    def authorize_admin
+      unless session[:is_admin]
+        flash[:notice] = "Only an admin can do that!"
+        redirect_to :controller => 'users', :action => 'index'
+      end
+    end
 end
