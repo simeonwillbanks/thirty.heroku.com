@@ -15,6 +15,7 @@
         <tr>
           <th>Written by</th>
           <th>Text</th>
+          <th>Created (UTC)</th>
           <th>Action</th>
         </tr>
   		</thead>
@@ -23,6 +24,7 @@
         <tr>
           <td><%=h tweet.user.name %></td>
           <td><%=h tweet.text %></td>
+          <td><%= tweet.created_at.strftime("%I:%M%p %m/%d/%y") %></td>
           <td>
             <% if session[:user_id] == tweet.user_id or session[:user_is_admin] == true %>
             <%= link_to 'Destroy', tweet, :confirm => 'Are you sure?', :method => :delete %>

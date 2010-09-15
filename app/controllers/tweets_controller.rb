@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
   
   # GET /tweets
   def index
-    @tweets = Tweet.all
+    @tweets = Tweet.find(:all, :order => "created_at DESC")
     
     respond_to do |format|
       format.html
@@ -24,7 +24,8 @@ class TweetsController < ApplicationController
     @tweet.user_id = session[:user_id]
     respond_to do |format|
       if @tweet.save
-        format.html { redirect_to(@tweet, :notice => 'Tweet was successfully created.') }
+        flash[:notice] = 'Tweet was successfully created.'
+        format.html { redirect_to( :controller => 'tweets', :action => 'index' ) }
       else
         format.html { render :action => "new" }
       end
