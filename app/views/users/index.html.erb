@@ -1,31 +1,47 @@
-<h1>Listing users</h1>
+<% 
+@body_class = "page-tables"
+@footer_links = []
+%>
 
-<table border="1">
-  <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Action</th>
-  </tr>
+<div class="full">
+	<header class="column width4">
+		<h1>Users</h1>
+		<hr class="full">
+	</header>
 
-<% @users.each do |user| %>
-  <tr>
-    <td><%=h user.name %></td>
-    <td><%=h user.email %></td>
-    <td>
-    <% if session[:user_is_admin] or session[:user_id] == user.id %>
-    <%= link_to 'Edit', edit_user_path(user) %>
-    <% end %>
-    &nbsp;
-    <% if session[:user_is_admin] %>
-    <%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %>
-    <% end %>
-    </td>
-  </tr>
-<% end %>
-</table>
+	<section class="column width3">
+		<table class="table-column">
+		  <% if session[:user_is_admin] %>
+		  <caption><%= link_to 'New user', new_user_path %></caption>
+		  <% end %>
+			<thead>
+				<tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+			  <% @users.each do |user| %>
+				<tr>
+          <td><%=h user.name %></td>
+          <td><%=h user.email %></td>
+          <td>
+          <% if session[:user_is_admin] or session[:user_id] == user.id %>
+          <%= link_to 'Edit', edit_user_path(user) %>
+          <% end %>
+          &nbsp;
+          <% if session[:user_is_admin] %>
+          <%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %>
+          <% end %>
+          </td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</section>
+	<hr class="full">
+</div>
 
-<br />
 
-<% if session[:user_is_admin] %>
-<%= link_to 'New user', new_user_path %>
-<% end %>
+

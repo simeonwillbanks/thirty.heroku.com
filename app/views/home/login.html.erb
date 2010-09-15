@@ -1,14 +1,28 @@
-<h1>Thirty login</h1>
-<% form_tag do %>
-<p>
-  <label>Name:</label>
-  <%= text_field_tag :name, params[:name] %>
-</p>  
-<p>
-  <label>Password:</label>
-  <%= password_field_tag :password, params[:password] %>
-</p>  
-<p>
-  <%= submit_tag 'Go' %>
-</p>
-<% end %>
+<% 
+@body_class = "page-forms"
+%>
+
+
+<div class="full">
+	<header class="column width4">
+		<h1>Login</h1>
+		<hr class="full">
+	</header>
+	<% form_tag '/login', :class => "full" do %>
+		<section class="column width4 first">
+			<fieldset class="width2">
+        <label class="width1 first">
+          Name
+          <%= text_field_tag :name, params[:name], :class => "text" %>
+        </label>
+        <label class="width1 first">
+          Password
+          <%= password_field_tag :password, params[:password], :class => "text" %>
+        </label>
+			</fieldset>
+			<fieldset class="width2">
+				<%= submit_tag 'Go' %>
+			</fieldset>
+		</section>
+	<% end %>
+</div>

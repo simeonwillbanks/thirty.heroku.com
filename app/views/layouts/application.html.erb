@@ -4,27 +4,34 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>Thirty: <%= controller.action_name %></title>
+  <title>ShitIm30Sumptin: <%= controller.action_name %></title>
   <%= stylesheet_link_tag 'baseline.compress' %>
-  <script type="text/javascript" src="scripts/html5.js"></script>
-  <style>
-		#page					{ margin: 0 auto 36px auto; }
-		section					{ padding-bottom: 0 !important; }
-		hr						{ background: #c00; }
-		#branding a				{ border: none; }
-		nav ul					{ width: 100%; margin: 0; top: 0; float: left; }
-		@media only screen and (max-device-width:480px) {
-			.layout-grid		{ background-image: url(images/baseline.png); }
-		}
-	</style>
+  <%= javascript_include_tag 'html5' %>
 </head>
-<body>
-
-<p style="color: green"><%= notice %></p>
-
-<%= yield %>
-
-<p><%= link_to 'Logout', :controller => 'home', :action => 'logout' %></p>
-
+<body class="<%= @body_class %>">
+  <div id="page">
+    
+		<header id="branding">
+		  <%= link_to( image_tag("logo.jpg", :size => "396x101"), {:controller => "home", :action => "index"}) %>
+		  <% if notice %>
+		  <h3><mark><%= notice %></mark></h3>
+		  <% end %>
+		</header>
+		
+		<%= yield :layout %>
+		
+		<footer class="full">
+  		<% if @footer_links %>
+			<p><small>
+			  <% @footer_links.each do |footer_link| %>
+			  <%= footer_link %> | 
+			  <% end %>
+			  <%= link_to 'Home', :controller => 'home', :action => 'index' %> | 
+			  <%= link_to 'Logout', :controller => 'home', :action => 'logout' %>
+			</small></p>
+  		<% end %>
+		</footer>
+		
+	</div>
 </body>
 </html>
