@@ -5,7 +5,18 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Thirty: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'baseline.compress' %>
+  <script type="text/javascript" src="scripts/html5.js"></script>
+  <style>
+		#page					{ margin: 0 auto 36px auto; }
+		section					{ padding-bottom: 0 !important; }
+		hr						{ background: #c00; }
+		#branding a				{ border: none; }
+		nav ul					{ width: 100%; margin: 0; top: 0; float: left; }
+		@media only screen and (max-device-width:480px) {
+			.layout-grid		{ background-image: url(images/baseline.png); }
+		}
+	</style>
 </head>
 <body>
 
