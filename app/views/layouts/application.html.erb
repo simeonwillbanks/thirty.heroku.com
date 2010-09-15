@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>ShitIm30Sumptin: <%= controller.action_name %></title>
+  <title> <%= controller.action_name.capitalize %> | <%= controller.controller_name().capitalize %> | Sh!tIm30Sumptin</title>
   <%= stylesheet_link_tag 'baseline.compress' %>
   <%= javascript_include_tag 'html5' %>
 </head>
@@ -21,12 +21,12 @@
 		<%= yield :layout %>
 		
 		<footer class="full">
-  		<% if @footer_links %>
+  		<% unless controller.action_name == "logout" or controller.action_name == "login"  %>
 			<p><small>
-			  <% @footer_links.each do |footer_link| %>
-			  <%= footer_link %> | 
-			  <% end %>
-			  <%= link_to 'Home', :controller => 'home', :action => 'index' %> | 
+			  <%= link_to 'Home', :controller => 'home', :action => 'index' %> |
+			  <%= link_to 'Tweets', tweets_path %> | 
+        <%= link_to 'Users', users_path %> | 
+			  <a href="http://twitter.com/ShitIm30Sumptin">Twitter Stream</a> |
 			  <%= link_to 'Logout', :controller => 'home', :action => 'logout' %>
 			</small></p>
   		<% end %>

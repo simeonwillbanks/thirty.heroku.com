@@ -27,3 +27,7 @@ section, nav, footer, div.full {padding-left:1em}
 footer {padding-bottom:1em}
 
 form {overflow:visible}
+textarea {height:72px; width:400px}
+
+#errorExplanation { color: #FF051A; }
+#errorExplanation p { font-style:italic; }

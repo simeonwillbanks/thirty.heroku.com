@@ -2,35 +2,43 @@
 @body_class = "page-tables"
 %>
 
-<h1>Listing tweets</h1>
+<div class="full">
+	<header class="column width4">
+		<h1>Tweets</h1>
+		<hr class="full">
+	</header>
 
-<table border="1">
-  <tr>
-    <th>Written by</th>
-    <th>Text</th>
-    <th>Published</th>
-    <th>Delete</th>
-  </tr>
-
-<% @tweets.each do |tweet| %>
-  <tr>
-    <td><%=h tweet.user.name %></td>
-    <td><%=h tweet.text %></td>
-    <td><%=h tweet.published %></td>
-    <!--
-    <td><%= link_to 'Show', tweet %></td>
-    <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
-    -->
-    <td>
-      <% if session[:user_id] == tweet.user_id or session[:user_is_admin] == true %>
-      <%= link_to 'Destroy', tweet, :confirm => 'Are you sure?', :method => :delete %>
-      <% end %>
-    </td>
+	<section class="column width3">
+		<table class="table-column">
+		  <caption><%= link_to 'New tweet', new_tweet_path %></caption>
+			<thead>
+        <tr>
+          <th>Written by</th>
+          <th>Text</th>
+          <th>Published</th>
+          <th>Delete</th>
+        </tr>
+  		</thead>
+  		<tbody>
+      <% @tweets.each do |tweet| %>
+        <tr>
+          <td><%=h tweet.user.name %></td>
+          <td><%=h tweet.text %></td>
+          <td><%=h tweet.published %></td>
+          <!--
+          <td><%= link_to 'Show', tweet %></td>
+          <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
+          -->
+          <td>
+            <% if session[:user_id] == tweet.user_id or session[:user_is_admin] == true %>
+            <%= link_to 'Destroy', tweet, :confirm => 'Are you sure?', :method => :delete %>
+            <% end %>
+          </td>
     
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New tweet', new_tweet_path %>
+        </tr>
+      <% end %>
+			</tbody>
+		</table>
+	</section>
+	<hr class="full">
+</div>

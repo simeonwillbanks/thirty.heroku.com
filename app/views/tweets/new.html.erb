@@ -2,18 +2,24 @@
 @body_class = "page-forms"
 %>
 
-<h1>New tweet</h1>
+<div class="full">
+	<header class="column width4">
+		<h1>New Tweet</h1>
+		<hr class="full">
+	</header>
 
-<% form_for(@tweet) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :text %><br />
-    <%= f.text_area :text %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', tweets_path %>
+  <% form_for(@tweet) do |f| %>
+    <%= f.error_messages %>
+  	<section class="column width4 first">
+  		<fieldset class="width2">
+        <label class="width1 first">
+          Text
+          <%= f.text_area :text %>
+        </label>
+  		</fieldset>
+  		<fieldset class="width2">
+  			<%= f.submit 'Create' %>
+  		</fieldset>
+  	</section>
+  <% end %>
+</div>
