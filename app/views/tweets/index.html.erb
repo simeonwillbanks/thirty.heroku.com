@@ -5,6 +5,7 @@
     <th>Written by</th>
     <th>Text</th>
     <th>Published</th>
+    <th>Delete</th>
   </tr>
 
 <% @tweets.each do |tweet| %>
@@ -15,8 +16,13 @@
     <!--
     <td><%= link_to 'Show', tweet %></td>
     <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
-    <td><%= link_to 'Destroy', tweet, :confirm => 'Are you sure?', :method => :delete %></td>
     -->
+    <td>
+      <% if session[:user_id] == tweet.user_id or session[:user_is_admin] == true %>
+      <%= link_to 'Destroy', tweet, :confirm => 'Are you sure?', :method => :delete %>
+      <% end %>
+    </td>
+    
   </tr>
 <% end %>
 </table>

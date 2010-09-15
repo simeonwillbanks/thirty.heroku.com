@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    if session[:is_admin]
+    if session[:user_is_admin]
       id = params[:id]
     else 
       id = session[:user_id]
@@ -91,7 +91,7 @@ class UsersController < ApplicationController
   
   protected
     def authorize_admin
-      unless session[:is_admin]
+      unless session[:user_is_admin]
         flash[:notice] = "Only an admin can do that!"
         redirect_to :controller => 'users', :action => 'index'
       end

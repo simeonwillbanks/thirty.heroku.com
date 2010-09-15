@@ -12,11 +12,11 @@
     <td><%=h user.name %></td>
     <td><%=h user.email %></td>
     <td>
-    <% if session[:is_admin] or session[:user_id] == user.id %>
+    <% if session[:user_is_admin] or session[:user_id] == user.id %>
     <%= link_to 'Edit', edit_user_path(user) %>
     <% end %>
     &nbsp;
-    <% if session[:is_admin] %>
+    <% if session[:user_is_admin] %>
     <%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %>
     <% end %>
     </td>
@@ -26,6 +26,6 @@
 
 <br />
 
-<% if session[:is_admin] %>
+<% if session[:user_is_admin] %>
 <%= link_to 'New user', new_user_path %>
 <% end %>

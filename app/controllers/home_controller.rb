@@ -4,8 +4,8 @@ class HomeController < ApplicationController
       user = User.authenticate(params[:name], params[:password])
       if user
         session[:user_id] = user.id
-        session[:is_admin] = user.is_admin
-        session[:name] = user.name
+        session[:user_is_admin] = user.is_admin
+        session[:user_name] = user.name
         redirect_to(:action => "index")
       else 
         flash.now[:notice] = "Invalid/user/password combination"
@@ -15,8 +15,8 @@ class HomeController < ApplicationController
 
   def logout
     session[:user_id] = nil
-    session[:is_admin] = nil
-    session[:name] = nil
+    session[:user_is_admin] = nil
+    session[:user_name] = nil
     flash[:notice] = "Logged out"
     redirect_to(:action => "login")
   end
