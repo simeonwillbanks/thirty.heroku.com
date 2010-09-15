@@ -10105,3 +10105,1639 @@ Rendering tweets/index
   [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
   [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
 Completed in 82ms (View: 32, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-09-15 08:59:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 128ms (View: 54, DB: 6) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 09:00:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Load (41.8ms)[0m   [0;1mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;35;1mTweet Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 160ms (View: 60, DB: 46) | 200 OK [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#new (for 127.0.0.1 at 2010-09-15 09:00:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tweets"}
+  [4;35;1mUser Columns (24.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (85.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+Rendering template within layouts/application
+Rendering tweets/new
+Completed in 190ms (View: 21, DB: 112) | 200 OK [http://0.0.0.0/tweets/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 09:16:57) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>"Where'd this gut come from?"}}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTweet Create (0.3ms)[0m   [0;1mINSERT INTO `tweets` (`created_at`, `published`, `updated_at`, `text`, `user_id`, `status_id`) VALUES('2010-09-15 16:16:57', 0, '2010-09-15 16:16:57', 'Where\'d this gut come from?', 1, NULL)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+
+NameError (uninitialized constant Tweet::OAuthConsumer):
+  app/models/tweet.rb:11
+  app/controllers/tweets_controller.rb:26:in `create'
+  app/controllers/tweets_controller.rb:25:in `create'
+
+Rendered rescues/_trace (173.9ms)
+Rendered rescues/_request_and_response (2.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 09:17:34) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>"Where'd this gut come from?"}}
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTweet Create (0.2ms)[0m   [0;1mINSERT INTO `tweets` (`created_at`, `published`, `updated_at`, `text`, `user_id`, `status_id`) VALUES('2010-09-15 16:17:34', 0, '2010-09-15 16:17:34', 'Where\'d this gut come from?', 1, NULL)[0m
+  [4;35;1mSQL (12.3ms)[0m   [0mROLLBACK[0m
+
+NoMethodError (undefined method `handle_response' for OAuthConsumer:Module):
+  app/models/tweet.rb:14
+  app/controllers/tweets_controller.rb:26:in `create'
+  app/controllers/tweets_controller.rb:25:in `create'
+
+Rendered rescues/_trace (104.2ms)
+Rendered rescues/_request_and_response (2.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 09:17:58) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>"Where'd this gut come from?"}}
+  [4;36;1mUser Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTweet Create (0.2ms)[0m   [0;1mINSERT INTO `tweets` (`created_at`, `published`, `updated_at`, `text`, `user_id`, `status_id`) VALUES('2010-09-15 16:17:58', 0, '2010-09-15 16:17:58', 'Where\'d this gut come from?', 1, NULL)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mROLLBACK[0m
+
+NoMethodError (undefined method `handle_response' for OAuthConsumer:Module):
+  app/models/tweet.rb:14
+  app/controllers/tweets_controller.rb:26:in `create'
+  app/controllers/tweets_controller.rb:25:in `create'
+
+Rendered rescues/_trace (167.4ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 09:20:45) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>"Where'd this gut come from?"}}
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTweet Create (0.2ms)[0m   [0;1mINSERT INTO `tweets` (`created_at`, `published`, `updated_at`, `text`, `user_id`, `status_id`) VALUES('2010-09-15 16:20:45', 0, '2010-09-15 16:20:45', 'Where\'d this gut come from?', 1, NULL)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+
+NameError (uninitialized constant Tweet::OAuthConsumerLiteLite):
+  app/models/tweet.rb:11
+  app/controllers/tweets_controller.rb:26:in `create'
+  app/controllers/tweets_controller.rb:25:in `create'
+
+Rendered rescues/_trace (105.4ms)
+Rendered rescues/_request_and_response (2.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 09:21:01) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>"Where'd this gut come from?"}}
+  [4;36;1mUser Columns (21.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (18.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTweet Create (0.2ms)[0m   [0;1mINSERT INTO `tweets` (`created_at`, `published`, `updated_at`, `text`, `user_id`, `status_id`) VALUES('2010-09-15 16:21:02', 0, '2010-09-15 16:21:02', 'Where\'d this gut come from?', 1, NULL)[0m
+oauth_consumer::handle_response %s
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/tweets
+Completed in 382ms (DB: 43) | 302 Found [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 09:21:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Load (0.3ms)[0m   [0;1mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;35;1mTweet Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 126ms (View: 76, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#destroy (for 127.0.0.1 at 2010-09-15 09:22:54) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "id"=>"8", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mTweet Load (0.2ms)[0m   [0mSELECT * FROM `tweets` WHERE (`tweets`.`id` = 8) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTweet Destroy (0.2ms)[0m   [0mDELETE FROM `tweets` WHERE `id` = 8[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/tweets
+Completed in 84ms (DB: 6) | 302 Found [http://0.0.0.0/tweets/8]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 09:22:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Load (0.2ms)[0m   [0mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;36;1mTweet Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 117ms (View: 68, DB: 5) | 200 OK [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 09:30:22) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Load (0.3ms)[0m   [0;1mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;35;1mTweet Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 143ms (View: 70, DB: 6) | 200 OK [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#new (for 127.0.0.1 at 2010-09-15 09:30:33) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+Rendering template within layouts/application
+Rendering tweets/new
+Completed in 70ms (View: 20, DB: 4) | 200 OK [http://0.0.0.0/tweets/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 09:30:35) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>"Where'd this gut come from?"}}
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTweet Create (0.2ms)[0m   [0;1mINSERT INTO `tweets` (`created_at`, `published`, `updated_at`, `text`, `user_id`, `status_id`) VALUES('2010-09-15 16:30:35', 0, '2010-09-15 16:30:35', 'Where\'d this gut come from?', 1, NULL)[0m
+after_create response '%s'
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/tweets
+Completed in 299ms (DB: 5) | 302 Found [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 09:30:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Load (0.3ms)[0m   [0;1mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 89ms (View: 40, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#destroy (for 127.0.0.1 at 2010-09-15 09:31:43) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "id"=>"9", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mTweet Load (0.2ms)[0m   [0mSELECT * FROM `tweets` WHERE (`tweets`.`id` = 9) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTweet Destroy (0.2ms)[0m   [0mDELETE FROM `tweets` WHERE `id` = 9[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/tweets
+Completed in 57ms (DB: 6) | 302 Found [http://0.0.0.0/tweets/9]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 09:31:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Load (0.3ms)[0m   [0mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;36;1mTweet Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 82ms (View: 32, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 09:35:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Load (0.3ms)[0m   [0;1mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;35;1mTweet Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 144ms (View: 70, DB: 6) | 200 OK [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#new (for 127.0.0.1 at 2010-09-15 09:35:21) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+Rendering template within layouts/application
+Rendering tweets/new
+Completed in 70ms (View: 21, DB: 4) | 200 OK [http://0.0.0.0/tweets/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 09:35:24) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>"Where'd this gut come from?"}}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTweet Create (0.2ms)[0m   [0;1mINSERT INTO `tweets` (`created_at`, `published`, `updated_at`, `text`, `user_id`, `status_id`) VALUES('2010-09-15 16:35:24', 0, '2010-09-15 16:35:24', 'Where\'d this gut come from?', 1, NULL)[0m
+after_create response '%s'
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/tweets
+Completed in 344ms (DB: 5) | 302 Found [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 09:35:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Load (0.3ms)[0m   [0;1mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 90ms (View: 40, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#destroy (for 127.0.0.1 at 2010-09-15 09:38:04) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "id"=>"10", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mTweet Load (0.2ms)[0m   [0mSELECT * FROM `tweets` WHERE (`tweets`.`id` = 10) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTweet Destroy (0.2ms)[0m   [0mDELETE FROM `tweets` WHERE `id` = 10[0m
+after_destroy resource 'http://api.twitter.com/1/statuses/destroy/0.json'
+  [4;36;1mSQL (0.8ms)[0m   [0;1mROLLBACK[0m
+Redirected to http://0.0.0.0:3000/tweets
+Completed in 200ms (DB: 6) | 302 Found [http://0.0.0.0/tweets/10]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 09:38:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;35;1mUser Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Load (0.3ms)[0m   [0mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;36;1mTweet Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 89ms (View: 39, DB: 5) | 200 OK [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#destroy (for 127.0.0.1 at 2010-09-15 09:39:11) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "id"=>"10", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mTweet Load (0.2ms)[0m   [0;1mSELECT * FROM `tweets` WHERE (`tweets`.`id` = 10) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTweet Destroy (0.2ms)[0m   [0;1mDELETE FROM `tweets` WHERE `id` = 10[0m
+after_destroy resource 'http://api.twitter.com/1/statuses/destroy/24585222213.json'
+after_destroy response '#<Net::HTTPOK:0x23de6fc>'
+  [4;35;1mSQL (1.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/tweets
+Completed in 346ms (DB: 6) | 302 Found [http://0.0.0.0/tweets/10]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 09:39:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Load (0.3ms)[0m   [0;1mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 82ms (View: 33, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#new (for 127.0.0.1 at 2010-09-15 09:39:28) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+Rendering template within layouts/application
+Rendering tweets/new
+Completed in 64ms (View: 12, DB: 4) | 200 OK [http://0.0.0.0/tweets/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 09:39:34) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>"Where'd this gut come from?"}}
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTweet Create (0.2ms)[0m   [0;1mINSERT INTO `tweets` (`created_at`, `published`, `updated_at`, `text`, `user_id`, `status_id`) VALUES('2010-09-15 16:39:34', 0, '2010-09-15 16:39:34', 'Where\'d this gut come from?', 1, NULL)[0m
+after_create response '#<Net::HTTPOK:0x22a5164>'
+  [4;35;1mSQL (0.8ms)[0m   [0mROLLBACK[0m
+
+NoMethodError (Attempt to call private method):
+  app/models/tweet.rb:17
+  app/controllers/tweets_controller.rb:26:in `create'
+  app/controllers/tweets_controller.rb:25:in `create'
+
+Rendered rescues/_trace (179.2ms)
+Rendered rescues/_request_and_response (2.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 09:40:14) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>"Where'd this gut come from?"}}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTweet Create (0.2ms)[0m   [0;1mINSERT INTO `tweets` (`created_at`, `published`, `updated_at`, `text`, `user_id`, `status_id`) VALUES('2010-09-15 16:40:14', 0, '2010-09-15 16:40:14', 'Where\'d this gut come from?', 1, NULL)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mROLLBACK[0m
+
+Exception (Status is a duplicate.):
+  lib/oauth_consumer_lite.rb:38:in `handle_response'
+  app/models/tweet.rb:14
+  app/controllers/tweets_controller.rb:26:in `create'
+  app/controllers/tweets_controller.rb:25:in `create'
+
+Rendered rescues/_trace (104.0ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 09:41:37) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>"Where'd this gut come from?"}}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTweet Create (0.3ms)[0m   [0;1mINSERT INTO `tweets` (`created_at`, `published`, `updated_at`, `text`, `user_id`, `status_id`) VALUES('2010-09-15 16:41:37', 0, '2010-09-15 16:41:37', 'Where\'d this gut come from?', 1, NULL)[0m
+after_create response '#<Net::HTTPOK:0x235db38>'
+  [4;35;1mTweet Update (0.4ms)[0m   [0mUPDATE `tweets` SET `updated_at` = '2010-09-15 16:41:38', `created_at` = '2010-09-15 16:41:37', `published` = 1, `user_id` = 1, `text` = 'Where\'d this gut come from?' WHERE `id` = 13[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/tweets
+Completed in 337ms (DB: 5) | 302 Found [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 09:41:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Load (0.4ms)[0m   [0mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;36;1mTweet Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 97ms (View: 41, DB: 6) | 200 OK [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 09:47:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Load (0.3ms)[0m   [0;1mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;35;1mTweet Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 149ms (View: 76, DB: 6) | 200 OK [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#new (for 127.0.0.1 at 2010-09-15 09:48:00) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+Rendering template within layouts/application
+Rendering tweets/new
+Completed in 71ms (View: 21, DB: 4) | 200 OK [http://0.0.0.0/tweets/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 09:48:05) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>"Hello test"}}
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTweet Create (0.2ms)[0m   [0mINSERT INTO `tweets` (`created_at`, `published`, `updated_at`, `text`, `user_id`, `status_id`) VALUES('2010-09-15 16:48:05', 0, '2010-09-15 16:48:05', 'Hello test', 1, NULL)[0m
+after_create response '%s'
+  [4;36;1mTweet Update (0.4ms)[0m   [0;1mUPDATE `tweets` SET `updated_at` = '2010-09-15 16:48:05', `created_at` = '2010-09-15 16:48:05', `published` = 1, `user_id` = 1, `text` = 'Hello test' WHERE `id` = 14[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/tweets
+Completed in 310ms (DB: 5) | 302 Found [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 09:48:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Load (0.3ms)[0m   [0;1mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;35;1mTweet Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 96ms (View: 46, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#new (for 127.0.0.1 at 2010-09-15 09:49:03) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+Rendering template within layouts/application
+Rendering tweets/new
+Completed in 115ms (View: 39, DB: 5) | 200 OK [http://0.0.0.0/tweets/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 09:49:08) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>"Hello another test"}}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTweet Create (0.2ms)[0m   [0mINSERT INTO `tweets` (`created_at`, `published`, `updated_at`, `text`, `user_id`, `status_id`) VALUES('2010-09-15 16:49:08', 0, '2010-09-15 16:49:08', 'Hello another test', 1, NULL)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mROLLBACK[0m
+
+NameError (undefined local variable or method `logger' for OAuthConsumerLite:Module):
+  lib/oauth_consumer_lite.rb:40:in `handle_response'
+  app/models/tweet.rb:14
+  app/controllers/tweets_controller.rb:26:in `create'
+  app/controllers/tweets_controller.rb:25:in `create'
+
+Rendered rescues/_trace (107.1ms)
+Rendered rescues/_request_and_response (70.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 09:56:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Load (0.3ms)[0m   [0;1mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;35;1mTweet Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 156ms (View: 83, DB: 6) | 200 OK [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#new (for 127.0.0.1 at 2010-09-15 09:57:05) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+Rendering template within layouts/application
+Rendering tweets/new
+Completed in 70ms (View: 20, DB: 4) | 200 OK [http://0.0.0.0/tweets/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 09:57:12) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>"What, a test"}}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTweet Create (0.2ms)[0m   [0;1mINSERT INTO `tweets` (`created_at`, `published`, `updated_at`, `text`, `user_id`, `status_id`) VALUES('2010-09-15 16:57:12', 0, '2010-09-15 16:57:12', 'What, a test', 1, NULL)[0m
+after_create response '{"in_reply_to_screen_name":null,"retweeted":false,"truncated":false,"created_at":"Wed Sep 15 16:57:12 +0000 2010","in_reply_to_user_id":null,"source":"<a href=\"http://thirty.heroku.com/\" rel=\"nofollow\">ShitIm30Sumptin</a>","contributors":null,"in_reply_to_status_id":null,"retweet_count":null,"place":null,"coordinates":null,"user":{"contributors_enabled":false,"time_zone":null,"description":null,"geo_enabled":false,"profile_sidebar_fill_color":"efefef","url":null,"lang":"en","verified":false,"profile_use_background_image":true,"created_at":"Sat Sep 04 01:32:20 +0000 2010","profile_sidebar_border_color":"eeeeee","location":null,"follow_request_sent":false,"profile_background_image_url":"http://s.twimg.com/a/1283564528/images/themes/theme14/bg.gif","profile_image_url":"http://a0.twimg.com/profile_images/1116833904/images_normal.jpeg","following":false,"profile_background_color":"131516","followers_count":0,"profile_background_tile":true,"protected":false,"screen_name":"ShitIm30Sumptin","listed_count":0,"friends_count":1,"profile_text_color":"333333","name":"30 Sumptin","statuses_count":8,"id":186658203,"show_all_inline_media":false,"notifications":false,"utc_offset":null,"favourites_count":0,"profile_link_color":"ff051a"},"favorited":false,"geo":null,"id":24586920772,"text":"What, a test"}'
+  [4;35;1mTweet Update (0.4ms)[0m   [0mUPDATE `tweets` SET `updated_at` = '2010-09-15 16:57:12', `created_at` = '2010-09-15 16:57:12', `published` = 1, `user_id` = 1, `text` = 'What, a test' WHERE `id` = 16[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/tweets
+Completed in 308ms (DB: 5) | 302 Found [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 09:57:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Load (0.3ms)[0m   [0mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;36;1mTweet Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 171ms (View: 121, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#new (for 127.0.0.1 at 2010-09-15 10:02:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+Rendering template within layouts/application
+Rendering tweets/new
+Completed in 114ms (View: 39, DB: 6) | 200 OK [http://0.0.0.0/tweets/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 10:02:59) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>"Testing, 1, 2, 3, heyo"}}
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTweet Create (0.2ms)[0m   [0mINSERT INTO `tweets` (`created_at`, `published`, `updated_at`, `text`, `user_id`, `status_id`) VALUES('2010-09-15 17:02:59', 0, '2010-09-15 17:02:59', 'Testing, 1, 2, 3, heyo', 1, NULL)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mROLLBACK[0m
+
+NoMethodError (undefined method `error' for #<Hash:0x23affdc>):
+  lib/oauth_consumer_lite.rb:21:in `handle_response'
+  app/models/tweet.rb:14
+  app/controllers/tweets_controller.rb:26:in `create'
+  app/controllers/tweets_controller.rb:25:in `create'
+
+Rendered rescues/_trace (107.0ms)
+Rendered rescues/_request_and_response (2.9ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 10:05:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Load (0.3ms)[0m   [0;1mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;35;1mTweet Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 167ms (View: 91, DB: 6) | 200 OK [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#new (for 127.0.0.1 at 2010-09-15 10:05:59) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+Rendering template within layouts/application
+Rendering tweets/new
+Completed in 73ms (View: 21, DB: 4) | 200 OK [http://0.0.0.0/tweets/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 10:06:03) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>"another test"}}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTweet Create (0.2ms)[0m   [0mINSERT INTO `tweets` (`created_at`, `published`, `updated_at`, `text`, `user_id`, `status_id`) VALUES('2010-09-15 17:06:03', 0, '2010-09-15 17:06:03', 'another test', 1, NULL)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+
+Exception (Exception):
+  lib/oauth_consumer_lite.rb:23:in `handle_response'
+  app/models/tweet.rb:14
+  app/controllers/tweets_controller.rb:26:in `create'
+  app/controllers/tweets_controller.rb:25:in `create'
+
+Rendered rescues/_trace (172.7ms)
+Rendered rescues/_request_and_response (2.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 10:10:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Load (0.3ms)[0m   [0mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;36;1mTweet Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 102ms (View: 52, DB: 5) | 200 OK [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#new (for 127.0.0.1 at 2010-09-15 10:10:02) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+Rendering template within layouts/application
+Rendering tweets/new
+Completed in 61ms (View: 11, DB: 4) | 200 OK [http://0.0.0.0/tweets/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 10:10:07) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>".kind_of? work"}}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTweet Create (0.2ms)[0m   [0;1mINSERT INTO `tweets` (`created_at`, `published`, `updated_at`, `text`, `user_id`, `status_id`) VALUES('2010-09-15 17:10:07', 0, '2010-09-15 17:10:07', '.kind_of? work', 1, NULL)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mROLLBACK[0m
+
+JSON::ParserError (705: unexpected token at '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <title>Twitter / Over capacity</title>
+    <link href="http://s.twimg.com/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <style type="text/css">
+      /* Page
+      ----------------------------------------------- */
+      * { border: 0; padding: 0; margin: 0; }
+      body{ margin: 10px 0; background:#C0DEED url(http://s.twimg.com/images/bg-clouds.png) repeat-x; color:#333; font: 12px Lucida Grande, Arial, sans-serif; text-align:center }
+      #container { width: 755px; margin: 0 auto; padding: 0px 0; text-align: left; position: relative; }
+      #content { width: 100%; margin-top: 0px; float: left; margin-top: 8px; padding-bottom: 1):
+  json (1.4.6) lib/json/common.rb:146:in `parse'
+  json (1.4.6) lib/json/common.rb:146:in `parse'
+  lib/oauth_consumer_lite.rb:19:in `handle_response'
+  app/models/tweet.rb:14
+  app/controllers/tweets_controller.rb:26:in `create'
+  app/controllers/tweets_controller.rb:25:in `create'
+
+Rendered rescues/_trace (185.1ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 10:13:42) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>".kind_of? work"}}
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTweet Create (0.2ms)[0m   [0;1mINSERT INTO `tweets` (`created_at`, `published`, `updated_at`, `text`, `user_id`, `status_id`) VALUES('2010-09-15 17:13:42', 0, '2010-09-15 17:13:42', '.kind_of? work', 1, NULL)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mROLLBACK[0m
+
+Exception (Exception):
+  lib/oauth_consumer_lite.rb:23:in `handle_response'
+  app/models/tweet.rb:14
+  app/controllers/tweets_controller.rb:26:in `create'
+  app/controllers/tweets_controller.rb:25:in `create'
+
+Rendered rescues/_trace (101.2ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 10:14:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Load (0.3ms)[0m   [0;1mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;35;1mTweet Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 164ms (View: 89, DB: 6) | 200 OK [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#new (for 127.0.0.1 at 2010-09-15 10:14:17) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+Rendering template within layouts/application
+Rendering tweets/new
+Completed in 72ms (View: 21, DB: 4) | 200 OK [http://0.0.0.0/tweets/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 10:14:26) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>"hello what is going on"}}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTweet Create (0.2ms)[0m   [0mINSERT INTO `tweets` (`created_at`, `published`, `updated_at`, `text`, `user_id`, `status_id`) VALUES('2010-09-15 17:14:26', 0, '2010-09-15 17:14:26', 'hello what is going on', 1, NULL)[0m
+after_create response coordinatesfavoritedfalsecreated_atWed Sep 15 17:14:26 +0000 2010truncatedfalsetexthello what is going oncontributorsid24588199539retweet_countgeoretweetedfalsein_reply_to_user_idusername30 Sumptinprofile_background_tiletrueprofile_sidebar_border_coloreeeeeeprofile_sidebar_fill_colorefefefprofile_image_urlhttp://a0.twimg.com/profile_images/1116833904/images_normal.jpeglocationcreated_atSat Sep 04 01:32:20 +0000 2010profile_link_colorff051afollow_request_sentfalsefavourites_count0contributors_enabledfalseurlutc_offsetid186658203listed_count0profile_use_background_imagetrueprofile_text_color333333protectedfalsefollowers_count0langennotificationsfalseprofile_background_color131516verifiedfalsedescriptiontime_zonegeo_enabledfalsefriends_count1statuses_count11profile_background_image_urlhttp://s.twimg.com/a/1283564528/images/themes/theme14/bg.gifscreen_nameShitIm30Sumptinshow_all_inline_mediafalsefollowingfalseplacesource<a href="http://thirty.heroku.com/" rel="nofollow">ShitIm30Sumptin</a>in_reply_to_screen_namein_reply_to_status_id
+  [4;36;1mTweet Update (0.4ms)[0m   [0;1mUPDATE `tweets` SET `updated_at` = '2010-09-15 17:14:26', `created_at` = '2010-09-15 17:14:26', `status_id` = 24588199539, `published` = 1, `user_id` = 1, `text` = 'hello what is going on' WHERE `id` = 21[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/tweets
+Completed in 286ms (DB: 5) | 302 Found [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 10:14:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Load (0.3ms)[0m   [0;1mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 177ms (View: 127, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#new (for 127.0.0.1 at 2010-09-15 10:15:47) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+Rendering template within layouts/application
+Rendering tweets/new
+Completed in 62ms (View: 12, DB: 4) | 200 OK [http://0.0.0.0/tweets/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 10:15:50) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>"what up!"}}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTweet Create (0.3ms)[0m   [0;1mINSERT INTO `tweets` (`created_at`, `published`, `updated_at`, `text`, `user_id`, `status_id`) VALUES('2010-09-15 17:15:50', 0, '2010-09-15 17:15:50', 'what up!', 1, NULL)[0m
+  [4;35;1mTweet Update (0.4ms)[0m   [0mUPDATE `tweets` SET `updated_at` = '2010-09-15 17:15:50', `created_at` = '2010-09-15 17:15:50', `status_id` = 24588305167, `published` = 1, `user_id` = 1, `text` = 'what up!' WHERE `id` = 22[0m
+after_create response coordinatesfavoritedfalsecreated_atWed Sep 15 17:15:50 +0000 2010truncatedfalsetextwhat up!contributorsid24588305167retweet_countgeoretweetedfalsein_reply_to_user_idusername30 Sumptinprofile_background_tiletrueprofile_sidebar_border_coloreeeeeeprofile_sidebar_fill_colorefefefprofile_image_urlhttp://a0.twimg.com/profile_images/1116833904/images_normal.jpeglocationcreated_atSat Sep 04 01:32:20 +0000 2010profile_link_colorff051afollow_request_sentfalsecontributors_enabledfalsefavourites_count0urlutc_offsetid186658203profile_use_background_imagetruelisted_count0followers_count0profile_text_color333333protectedfalselangennotificationsfalseverifiedfalseprofile_background_color131516geo_enabledfalsedescriptiontime_zoneprofile_background_image_urlhttp://s.twimg.com/a/1283564528/images/themes/theme14/bg.gifstatuses_count12friends_count1screen_nameShitIm30Sumptinfollowingfalseshow_all_inline_mediafalseplacesource<a href="http://thirty.heroku.com/" rel="nofollow">ShitIm30Sumptin</a>in_reply_to_screen_namein_reply_to_status_id
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/tweets
+Completed in 287ms (DB: 5) | 302 Found [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 10:15:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Load (0.3ms)[0m   [0mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;36;1mTweet Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 117ms (View: 66, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#destroy (for 127.0.0.1 at 2010-09-15 10:16:46) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "id"=>"21", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mTweet Load (0.2ms)[0m   [0;1mSELECT * FROM `tweets` WHERE (`tweets`.`id` = 21) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTweet Destroy (0.2ms)[0m   [0;1mDELETE FROM `tweets` WHERE `id` = 21[0m
+after_destroy resource 'http://api.twitter.com/1/statuses/destroy/24588199539.json'
+after_destroy response coordinatesfavoritedfalsecreated_atWed Sep 15 17:14:26 +0000 2010truncatedfalsetexthello what is going oncontributorsid24588199539retweet_countgeoretweetedfalsein_reply_to_user_idusername30 Sumptinprofile_background_tiletrueprofile_sidebar_border_coloreeeeeeprofile_sidebar_fill_colorefefefprofile_image_urlhttp://a0.twimg.com/profile_images/1116833904/images_normal.jpeglocationcreated_atSat Sep 04 01:32:20 +0000 2010profile_link_colorff051afollow_request_sentfalsefavourites_count0urlcontributors_enabledfalseutc_offsetid186658203listed_count0profile_use_background_imagetrueprofile_text_color333333protectedfalsefollowers_count0langennotificationsfalseprofile_background_color131516verifiedfalsegeo_enabledfalsedescriptiontime_zonestatuses_count11friends_count1profile_background_image_urlhttp://s.twimg.com/a/1283564528/images/themes/theme14/bg.gifshow_all_inline_mediafalsescreen_nameShitIm30Sumptinfollowingfalseplacesource<a href="http://thirty.heroku.com/" rel="nofollow">ShitIm30Sumptin</a>in_reply_to_screen_namein_reply_to_status_id
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/tweets
+Completed in 359ms (DB: 5) | 302 Found [http://0.0.0.0/tweets/21]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 10:16:46) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Load (0.3ms)[0m   [0;1mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;35;1mTweet Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 109ms (View: 60, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#destroy (for 127.0.0.1 at 2010-09-15 10:16:52) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "id"=>"22", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mTweet Load (0.2ms)[0m   [0;1mSELECT * FROM `tweets` WHERE (`tweets`.`id` = 22) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTweet Destroy (0.2ms)[0m   [0;1mDELETE FROM `tweets` WHERE `id` = 22[0m
+after_destroy resource 'http://api.twitter.com/1/statuses/destroy/24588305167.json'
+after_destroy response coordinatesfavoritedfalsecreated_atWed Sep 15 17:15:50 +0000 2010truncatedfalsetextwhat up!contributorsid24588305167retweet_countgeoretweetedfalsein_reply_to_user_idusername30 Sumptinprofile_background_tiletrueprofile_sidebar_border_coloreeeeeeprofile_sidebar_fill_colorefefefprofile_image_urlhttp://a0.twimg.com/profile_images/1116833904/images_normal.jpeglocationcreated_atSat Sep 04 01:32:20 +0000 2010profile_link_colorff051afollow_request_sentfalsecontributors_enabledfalsefavourites_count0urlutc_offsetid186658203profile_use_background_imagetruelisted_count0profile_text_color333333protectedfalselangenfollowers_count0notificationsfalseverifiedfalseprofile_background_color131516geo_enabledfalsedescriptiontime_zoneprofile_background_image_urlhttp://s.twimg.com/a/1283564528/images/themes/theme14/bg.gifstatuses_count10friends_count1screen_nameShitIm30Sumptinfollowingfalseshow_all_inline_mediafalseplacesource<a href="http://thirty.heroku.com/" rel="nofollow">ShitIm30Sumptin</a>in_reply_to_screen_namein_reply_to_status_id
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/tweets
+Completed in 346ms (DB: 5) | 302 Found [http://0.0.0.0/tweets/22]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 10:16:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Load (0.3ms)[0m   [0;1mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 102ms (View: 52, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 10:17:23) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Load (0.3ms)[0m   [0;1mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 82ms (View: 33, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#new (for 127.0.0.1 at 2010-09-15 10:21:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+Rendering template within layouts/application
+Rendering tweets/new
+Completed in 116ms (View: 39, DB: 5) | 200 OK [http://0.0.0.0/tweets/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 10:21:16) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>"Test from better code"}}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTweet Create (0.2ms)[0m   [0mINSERT INTO `tweets` (`created_at`, `published`, `updated_at`, `text`, `user_id`, `status_id`) VALUES('2010-09-15 17:21:17', 0, '2010-09-15 17:21:17', 'Test from better code', 1, NULL)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mROLLBACK[0m
+
+TypeError (class or module required):
+  lib/oauth_consumer_lite.rb:24:in `kind_of?'
+  lib/oauth_consumer_lite.rb:24:in `handle_response'
+  app/models/tweet.rb:14
+  app/controllers/tweets_controller.rb:26:in `create'
+  app/controllers/tweets_controller.rb:25:in `create'
+
+Rendered rescues/_trace (108.5ms)
+Rendered rescues/_request_and_response (70.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 10:22:16) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>"Test from better code"}}
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTweet Create (0.2ms)[0m   [0;1mINSERT INTO `tweets` (`created_at`, `published`, `updated_at`, `text`, `user_id`, `status_id`) VALUES('2010-09-15 17:22:16', 0, '2010-09-15 17:22:16', 'Test from better code', 1, NULL)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mROLLBACK[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  app/models/tweet.rb:16
+  app/controllers/tweets_controller.rb:26:in `create'
+  app/controllers/tweets_controller.rb:25:in `create'
+
+Rendered rescues/_trace (105.1ms)
+Rendered rescues/_request_and_response (2.9ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 10:22:28) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;36;1mUser Columns (308.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Load (0.3ms)[0m   [0;1mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;35;1mTweet Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 509ms (View: 144, DB: 312) | 200 OK [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#new (for 127.0.0.1 at 2010-09-15 10:22:38) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+Rendering template within layouts/application
+Rendering tweets/new
+Completed in 70ms (View: 21, DB: 4) | 200 OK [http://0.0.0.0/tweets/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 10:22:39) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>"Test from better code"}}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTweet Create (0.2ms)[0m   [0;1mINSERT INTO `tweets` (`created_at`, `published`, `updated_at`, `text`, `user_id`, `status_id`) VALUES('2010-09-15 17:22:39', 0, '2010-09-15 17:22:39', 'Test from better code', 1, NULL)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mROLLBACK[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  app/models/tweet.rb:16
+  app/controllers/tweets_controller.rb:26:in `create'
+  app/controllers/tweets_controller.rb:25:in `create'
+
+Rendered rescues/_trace (99.1ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 10:23:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Load (0.3ms)[0m   [0;1mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;35;1mTweet Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 143ms (View: 69, DB: 6) | 200 OK [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#new (for 127.0.0.1 at 2010-09-15 10:23:39) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tweets"}
+  [4;35;1mUser Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+Rendering template within layouts/application
+Rendering tweets/new
+Completed in 70ms (View: 20, DB: 5) | 200 OK [http://0.0.0.0/tweets/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 10:23:40) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>"Test from better code"}}
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTweet Create (0.2ms)[0m   [0;1mINSERT INTO `tweets` (`created_at`, `published`, `updated_at`, `text`, `user_id`, `status_id`) VALUES('2010-09-15 17:23:40', 0, '2010-09-15 17:23:40', 'Test from better code', 1, NULL)[0m
+  [4;35;1mTweet Update (0.4ms)[0m   [0mUPDATE `tweets` SET `updated_at` = '2010-09-15 17:23:41', `created_at` = '2010-09-15 17:23:40', `status_id` = 24588874305, `published` = 1, `user_id` = 1, `text` = 'Test from better code' WHERE `id` = 26[0m
+after_create response coordinatesfavoritedfalsecreated_atWed Sep 15 17:23:41 +0000 2010truncatedfalsetextTest from better codecontributorsid24588874305retweet_countgeoretweetedfalsein_reply_to_user_idusername30 Sumptinprofile_background_tiletrueprofile_sidebar_border_coloreeeeeeprofile_sidebar_fill_colorefefefprofile_image_urlhttp://a0.twimg.com/profile_images/1116833904/images_normal.jpeglocationcreated_atSat Sep 04 01:32:20 +0000 2010profile_link_colorff051afollow_request_sentfalsefavourites_count0urlcontributors_enabledfalseutc_offsetid186658203listed_count0profile_use_background_imagetrueprofile_text_color333333protectedfalsefollowers_count0langennotificationsfalseprofile_background_color131516verifiedfalsegeo_enabledfalsedescriptiontime_zonestatuses_count5friends_count1profile_background_image_urlhttp://s.twimg.com/a/1283564528/images/themes/theme14/bg.gifshow_all_inline_mediafalsescreen_nameShitIm30Sumptinfollowingfalseplacesource<a href="http://thirty.heroku.com/" rel="nofollow">ShitIm30Sumptin</a>in_reply_to_screen_namein_reply_to_status_id
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/tweets
+Completed in 316ms (DB: 5) | 302 Found [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 10:23:41) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Load (0.3ms)[0m   [0mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;36;1mTweet Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 89ms (View: 39, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#destroy (for 127.0.0.1 at 2010-09-15 10:23:47) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "id"=>"26", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mTweet Load (0.2ms)[0m   [0;1mSELECT * FROM `tweets` WHERE (`tweets`.`id` = 26) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTweet Destroy (0.2ms)[0m   [0;1mDELETE FROM `tweets` WHERE `id` = 26[0m
+after_destroy resource 'http://api.twitter.com/1/statuses/destroy/24588874305.json'
+after_destroy response coordinatesfavoritedfalsecreated_atWed Sep 15 17:23:41 +0000 2010truncatedfalsetextTest from better codecontributorsid24588874305retweet_countgeoretweetedfalsein_reply_to_user_idusername30 Sumptinprofile_background_tiletrueprofile_sidebar_border_coloreeeeeeprofile_sidebar_fill_colorefefefprofile_image_urlhttp://a0.twimg.com/profile_images/1116833904/images_normal.jpeglocationcreated_atSat Sep 04 01:32:20 +0000 2010profile_link_colorff051afollow_request_sentfalsecontributors_enabledfalsefavourites_count0urlutc_offsetid186658203listed_count0profile_use_background_imagetruefollowers_count0profile_text_color333333protectedfalselangennotificationsfalseprofile_background_color131516verifiedfalsegeo_enabledfalsedescriptiontime_zonefriends_count1statuses_count4profile_background_image_urlhttp://s.twimg.com/a/1283564528/images/themes/theme14/bg.gifshow_all_inline_mediafalsescreen_nameShitIm30Sumptinfollowingfalseplacesource<a href="http://thirty.heroku.com/" rel="nofollow">ShitIm30Sumptin</a>in_reply_to_screen_namein_reply_to_status_id
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/tweets
+Completed in 298ms (DB: 5) | 302 Found [http://0.0.0.0/tweets/26]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 10:23:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Load (0.3ms)[0m   [0;1mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 82ms (View: 32, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#new (for 127.0.0.1 at 2010-09-15 10:33:53) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+Rendering template within layouts/application
+Rendering tweets/new
+Completed in 117ms (View: 43, DB: 5) | 200 OK [http://0.0.0.0/tweets/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 10:33:57) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>"Testing new mod"}}
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTweet Create (0.2ms)[0m   [0mINSERT INTO `tweets` (`created_at`, `published`, `updated_at`, `text`, `user_id`, `status_id`) VALUES('2010-09-15 17:33:57', 0, '2010-09-15 17:33:57', 'Testing new mod', 1, NULL)[0m
+  [4;36;1mTweet Update (0.4ms)[0m   [0;1mUPDATE `tweets` SET `updated_at` = '2010-09-15 17:33:57', `created_at` = '2010-09-15 17:33:57', `status_id` = 24589617536, `published` = 1, `user_id` = 1, `text` = 'Testing new mod' WHERE `id` = 27[0m
+after_create response coordinatesfavoritedfalsecreated_atWed Sep 15 17:33:57 +0000 2010truncatedfalsetextTesting new modcontributorsid24589617536retweet_countgeoretweetedfalsein_reply_to_user_idusername30 Sumptinprofile_background_tiletrueprofile_sidebar_border_coloreeeeeeprofile_sidebar_fill_colorefefefprofile_image_urlhttp://a0.twimg.com/profile_images/1116833904/images_normal.jpeglocationcreated_atSat Sep 04 01:32:20 +0000 2010profile_link_colorff051afollow_request_sentfalsecontributors_enabledfalsefavourites_count0urlutc_offsetid186658203listed_count0profile_use_background_imagetruefollowers_count0profile_text_color333333protectedfalselangennotificationsfalsegeo_enabledfalseprofile_background_color131516verifiedfalsedescriptiontime_zonestatuses_count5profile_background_image_urlhttp://s.twimg.com/a/1283564528/images/themes/theme14/bg.giffriends_count1screen_nameShitIm30Sumptinfollowingfalseshow_all_inline_mediafalseplacesource<a href="http://thirty.heroku.com/" rel="nofollow">ShitIm30Sumptin</a>in_reply_to_screen_namein_reply_to_status_id
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/tweets
+Completed in 294ms (DB: 5) | 302 Found [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 10:33:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Load (0.3ms)[0m   [0;1mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 108ms (View: 59, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#destroy (for 127.0.0.1 at 2010-09-15 10:34:04) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "id"=>"27", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mTweet Load (0.2ms)[0m   [0mSELECT * FROM `tweets` WHERE (`tweets`.`id` = 27) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTweet Destroy (0.2ms)[0m   [0mDELETE FROM `tweets` WHERE `id` = 27[0m
+after_destroy resource 'http://api.twitter.com/1/statuses/destroy/24589617536.json'
+after_destroy response coordinatesfavoritedfalsecreated_atWed Sep 15 17:33:57 +0000 2010truncatedfalsetextTesting new modcontributorsid24589617536retweet_countgeoretweetedfalsein_reply_to_user_idusername30 Sumptinprofile_background_tiletrueprofile_sidebar_border_coloreeeeeeprofile_sidebar_fill_colorefefefprofile_image_urlhttp://a0.twimg.com/profile_images/1116833904/images_normal.jpeglocationcreated_atSat Sep 04 01:32:20 +0000 2010profile_link_colorff051afollow_request_sentfalsecontributors_enabledfalseurlfavourites_count0utc_offsetid186658203profile_use_background_imagetruelisted_count0profile_text_color333333protectedfalsefollowers_count0langennotificationsfalseverifiedfalsegeo_enabledfalseprofile_background_color131516descriptiontime_zonefriends_count1profile_background_image_urlhttp://s.twimg.com/a/1283564528/images/themes/theme14/bg.gifstatuses_count4screen_nameShitIm30Sumptinfollowingfalseshow_all_inline_mediafalseplacesource<a href="http://thirty.heroku.com/" rel="nofollow">ShitIm30Sumptin</a>in_reply_to_screen_namein_reply_to_status_id
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/tweets
+Completed in 363ms (DB: 5) | 302 Found [http://0.0.0.0/tweets/27]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 10:34:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Load (0.3ms)[0m   [0mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;36;1mTweet Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 82ms (View: 33, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#new (for 127.0.0.1 at 2010-09-15 10:39:54) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+Rendering template within layouts/application
+Rendering tweets/new
+Completed in 60ms (View: 11, DB: 4) | 200 OK [http://0.0.0.0/tweets/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 10:39:55) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>""}}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+
+NoMethodError (undefined method `call' for nil:NilClass):
+  app/controllers/tweets_controller.rb:25:in `create'
+
+Rendered rescues/_trace (77.0ms)
+Rendered rescues/_request_and_response (2.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 10:41:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Load (0.3ms)[0m   [0;1mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 82ms (View: 32, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#new (for 127.0.0.1 at 2010-09-15 10:41:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+Rendering template within layouts/application
+Rendering tweets/new
+Completed in 131ms (View: 12, DB: 4) | 200 OK [http://0.0.0.0/tweets/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 10:41:11) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>""}}
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+
+NameError (uninitialized constant TweetsController::RecordInvalid):
+  app/controllers/tweets_controller.rb:31:in `create'
+  app/controllers/tweets_controller.rb:25:in `create'
+
+Rendered rescues/_trace (74.2ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 10:41:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Load (0.3ms)[0m   [0mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;36;1mTweet Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 82ms (View: 32, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#new (for 127.0.0.1 at 2010-09-15 10:41:48) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+Rendering template within layouts/application
+Rendering tweets/new
+Completed in 60ms (View: 11, DB: 4) | 200 OK [http://0.0.0.0/tweets/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 10:41:49) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>""}}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+
+NoMethodError (undefined method `call' for nil:NilClass):
+  app/controllers/tweets_controller.rb:25:in `create'
+
+Rendered rescues/_trace (149.2ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 10:46:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;36;1mUser Columns (27.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Load (0.3ms)[0m   [0;1mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 107ms (View: 32, DB: 30) | 200 OK [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#new (for 127.0.0.1 at 2010-09-15 10:46:24) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+Rendering template within layouts/application
+Rendering tweets/new
+Completed in 60ms (View: 11, DB: 4) | 200 OK [http://0.0.0.0/tweets/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 10:46:25) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>""}}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Redirected to http://0.0.0.0:3000/tweets
+Completed in 54ms (DB: 4) | 302 Found [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 10:46:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Load (0.3ms)[0m   [0mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;36;1mTweet Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 83ms (View: 32, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#new (for 127.0.0.1 at 2010-09-15 10:46:32) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+Rendering template within layouts/application
+Rendering tweets/new
+Completed in 60ms (View: 11, DB: 4) | 200 OK [http://0.0.0.0/tweets/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 10:46:43) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>""}}
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+
+NoMethodError (undefined method `call' for nil:NilClass):
+  app/controllers/tweets_controller.rb:25:in `create'
+
+Rendered rescues/_trace (75.2ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 10:48:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Load (0.3ms)[0m   [0;1mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 83ms (View: 32, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#new (for 127.0.0.1 at 2010-09-15 10:48:05) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+Rendering template within layouts/application
+Rendering tweets/new
+Completed in 60ms (View: 11, DB: 4) | 200 OK [http://0.0.0.0/tweets/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 10:48:06) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>""}}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering tweets/new
+Completed in 77ms (View: 24, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-09-15 10:48:14) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "controller"=>"tweets", "tweet"=>{"text"=>"Hello new controller logic"}}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTweet Create (0.2ms)[0m   [0mINSERT INTO `tweets` (`created_at`, `published`, `updated_at`, `text`, `user_id`, `status_id`) VALUES('2010-09-15 17:48:14', 0, '2010-09-15 17:48:14', 'Hello new controller logic', 1, NULL)[0m
+  [4;36;1mTweet Update (0.4ms)[0m   [0;1mUPDATE `tweets` SET `updated_at` = '2010-09-15 17:48:15', `created_at` = '2010-09-15 17:48:14', `status_id` = 24590575860, `published` = 1, `user_id` = 1, `text` = 'Hello new controller logic' WHERE `id` = 28[0m
+after_create response coordinatesfavoritedfalsecreated_atWed Sep 15 17:48:15 +0000 2010truncatedfalsetextHello new controller logiccontributorsid24590575860retweet_countgeoretweetedfalsein_reply_to_user_idusername30 Sumptinprofile_background_tiletrueprofile_sidebar_border_coloreeeeeeprofile_sidebar_fill_colorefefefprofile_image_urlhttp://a0.twimg.com/profile_images/1116833904/images_normal.jpeglocationcreated_atSat Sep 04 01:32:20 +0000 2010profile_link_colorff051afollow_request_sentfalsefavourites_count0contributors_enabledfalseurlutc_offsetid186658203listed_count0profile_use_background_imagetrueprofile_text_color333333protectedfalsefollowers_count0langennotificationsfalseprofile_background_color131516verifiedfalsedescriptiontime_zonegeo_enabledfalsefriends_count1statuses_count5profile_background_image_urlhttp://s.twimg.com/a/1283564528/images/themes/theme14/bg.gifscreen_nameShitIm30Sumptinshow_all_inline_mediafalsefollowingfalseplacesource<a href="http://thirty.heroku.com/" rel="nofollow">ShitIm30Sumptin</a>in_reply_to_screen_namein_reply_to_status_id
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/tweets
+Completed in 261ms (DB: 5) | 302 Found [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 10:48:15) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Load (0.3ms)[0m   [0;1mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;35;1mTweet Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 88ms (View: 39, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#destroy (for 127.0.0.1 at 2010-09-15 10:48:22) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"8Xft12KGtHOc9NNE8iLWy0jgixR9BL4Nr9fwgsHKjiE=", "id"=>"28", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mTweet Load (0.2ms)[0m   [0mSELECT * FROM `tweets` WHERE (`tweets`.`id` = 28) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTweet Destroy (0.2ms)[0m   [0mDELETE FROM `tweets` WHERE `id` = 28[0m
+after_destroy resource 'http://api.twitter.com/1/statuses/destroy/24590575860.json'
+after_destroy response coordinatesfavoritedfalsecreated_atWed Sep 15 17:48:15 +0000 2010truncatedfalsetextHello new controller logiccontributorsid24590575860retweet_countgeoretweetedfalsein_reply_to_user_idusername30 Sumptinprofile_background_tiletrueprofile_sidebar_border_coloreeeeeeprofile_sidebar_fill_colorefefefprofile_image_urlhttp://a0.twimg.com/profile_images/1116833904/images_normal.jpeglocationcreated_atSat Sep 04 01:32:20 +0000 2010profile_link_colorff051afollow_request_sentfalsecontributors_enabledfalsefavourites_count0urlutc_offsetid186658203listed_count0profile_use_background_imagetrueprofile_text_color333333protectedfalsefollowers_count0langennotificationsfalsegeo_enabledfalseprofile_background_color131516descriptiontime_zoneverifiedfalsestatuses_count4friends_count1profile_background_image_urlhttp://s.twimg.com/a/1283564528/images/themes/theme14/bg.gifscreen_nameShitIm30Sumptinshow_all_inline_mediafalsefollowingfalseplacesource<a href="http://thirty.heroku.com/" rel="nofollow">ShitIm30Sumptin</a>in_reply_to_screen_namein_reply_to_status_id
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/tweets
+Completed in 284ms (DB: 5) | 302 Found [http://0.0.0.0/tweets/28]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-09-15 10:48:22) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Load (0.3ms)[0m   [0mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;36;1mTweet Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 82ms (View: 33, DB: 4) | 200 OK [http://0.0.0.0/tweets]

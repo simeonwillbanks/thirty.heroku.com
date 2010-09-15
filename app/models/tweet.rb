@@ -1,4 +1,4 @@
-require "oauth_consumer"
+require "twitter_oauth_consumer_lite"
 
 class Tweet < ActiveRecord::Base
   validates_presence_of :text, :message => "must be entered"
@@ -8,18 +8,23 @@ class Tweet < ActiveRecord::Base
   begin
     
     after_create do |tweet|
-      response = access_token.request(:post, 
+      response = TwitterOAuthConsumerLite.access_token.request(:post, 
         "http://api.twitter.com/1/statuses/update.json", 
         'status' => tweet.text)
-      logger.info("oauth_consumer::handle_response %s" % handle_response(response))      
+      json = TwitterOAuthConsumerLite.handle_response(response)
+      tweet.published = 1
+      tweet.status_id = json['id']   
+      tweet.save   
+      logger.debug("after_create response %s" % json.to_s)   
     end
   
     after_destroy do |tweet|
       if tweet.published
         resource = "http://api.twitter.com/1/statuses/destroy/%d.json" % tweet.status_id
-        logger.info("resource is %s" % resource)
-        response = access_token.request(:post, resource)
-        logger.info("response is %s" % handle_response(response))      
+        logger.debug("after_destroy resource '%s'" % resource)
+        response = TwitterOAuthConsumerLite.access_token.request(:post, resource)
+        json = TwitterOAuthConsumerLite.handle_response(response)
+        logger.debug("after_destroy response %s" % json.to_s)      
       end
     end
     

@@ -22,13 +22,18 @@ class TweetsController < ApplicationController
   def create
     @tweet = Tweet.new(params[:tweet])
     @tweet.user_id = session[:user_id]
-    respond_to do |format|
-      if @tweet.save
-        flash[:notice] = 'Tweet was successfully created.'
-        format.html { redirect_to( :controller => 'tweets', :action => 'index' ) }
-      else
-        format.html { render :action => "new" }
-      end
+    begin
+      respond_to do |format|
+        if @tweet.save
+          flash[:notice] = 'Tweet was successfully created.'
+          format.html { redirect_to( :controller => 'tweets', :action => 'index' ) }
+        else
+          format.html { render :action => "new" }
+        end
+      end  
+    rescue Exception => e
+      flash[:notice] = e.message
+      redirect_to :controller => 'tweets', :action => 'index'
     end
   end
   
