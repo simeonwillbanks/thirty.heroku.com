@@ -49,7 +49,7 @@ class TweetsController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { redirect_to(tweets_url) }
+      format.html { redirect_to :controller => 'tweets', :action => 'index' }
     end
   end
   
