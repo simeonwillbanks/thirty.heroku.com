@@ -26,6 +26,8 @@ module TwitterOAuthConsumerLite
     end
     if not response.kind_of? Net::HTTPOK
       raise Exception, json['error']
+      # Raise CustomError
+      # raise json['error']
     end
     json
   end

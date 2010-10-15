@@ -2,6 +2,9 @@ require 'digest/sha1'
 
 class User < ActiveRecord::Base
   
+  #Mass assignment only sets name and email
+  attr_accessible :name, :email, :password
+  
   has_many :tweets
   
   validates_presence_of :name

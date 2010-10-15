@@ -11741,3 +11741,501 @@ Rendering tweets/index
   [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
   [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
 Completed in 82ms (View: 33, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;36;1mSQL (22.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-10-15 14:20:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mUser Columns (25.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/login
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 193ms (DB: 91) | 302 Found [http://0.0.0.0/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#login (for 127.0.0.1 at 2010-10-15 14:20:16) [GET]
+  Parameters: {"action"=>"login", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/login
+Completed in 160ms (View: 152, DB: 1) | 200 OK [http://0.0.0.0/login]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#login (for 127.0.0.1 at 2010-10-15 14:20:26) [POST]
+  Parameters: {"name"=>"simeon", "commit"=>"Go", "action"=>"login", "authenticity_token"=>"NUoBsbSR2xkZsjGa53qQ4DuDEkf8aIUmW1vIEv5nw7M=", "controller"=>"home", "password"=>"[FILTERED]"}
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'simeon') LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/
+Completed in 36ms (DB: 3) | 302 Found [http://0.0.0.0/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-10-15 14:20:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 46ms (View: 14, DB: 2) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-15 14:20:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` ORDER BY name[0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 76ms (View: 43, DB: 3) | 200 OK [http://0.0.0.0/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#destroy (for 127.0.0.1 at 2010-10-15 14:20:43) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"NUoBsbSR2xkZsjGa53qQ4DuDEkf8aIUmW1vIEv5nw7M=", "id"=>"4", "controller"=>"users"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.2ms)[0m   [0mDELETE FROM `users` WHERE `id` = 4[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 38ms (DB: 3) | 302 Found [http://0.0.0.0/users/4]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-15 14:20:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` ORDER BY name[0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 60ms (View: 27, DB: 2) | 200 OK [http://0.0.0.0/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-10-15 14:20:48) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 59ms (View: 25, DB: 2) | 200 OK [http://0.0.0.0/users/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-10-15 14:21:02) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"NUoBsbSR2xkZsjGa53qQ4DuDEkf8aIUmW1vIEv5nw7M=", "controller"=>"users", "user"=>{"name"=>"mark", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"mherczeg@gmail.com"}}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: password_confirmation, password
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'mark') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'mherczeg@gmail.com') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 142ms (View: 25, DB: 3) | 200 OK [http://0.0.0.0/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-10-15 14:21:17) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"NUoBsbSR2xkZsjGa53qQ4DuDEkf8aIUmW1vIEv5nw7M=", "controller"=>"users", "user"=>{"name"=>"mark", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"mherczeg@gmail.com"}}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: password_confirmation, password
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'mark') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'mherczeg@gmail.com') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 66ms (View: 24, DB: 3) | 200 OK [http://0.0.0.0/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-10-15 14:22:06) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"NUoBsbSR2xkZsjGa53qQ4DuDEkf8aIUmW1vIEv5nw7M=", "controller"=>"users", "user"=>{"name"=>"mark", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"mherczeg@gmail.com"}}
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: password_confirmation
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'mark') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'mherczeg@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `created_at`, `updated_at`, `hashed_password`, `is_admin`, `email`) VALUES('mark', '181437100.0700711640515982', '2010-10-15 21:22:06', '2010-10-15 21:22:06', '7edf3ccf264c99122d2a49a170106101a2f10f89', 0, 'mherczeg@gmail.com')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 66ms (DB: 5) | 302 Found [http://0.0.0.0/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-15 14:22:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` ORDER BY name[0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 158ms (View: 59, DB: 3) | 200 OK [http://0.0.0.0/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-10-15 14:22:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Load (13.2ms)[0m   [0;1mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;35;1mTweet Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 186ms (View: 91, DB: 17) | 200 OK [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#new (for 127.0.0.1 at 2010-10-15 14:22:14) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+Rendering template within layouts/application
+Rendering tweets/new
+Completed in 70ms (View: 21, DB: 4) | 200 OK [http://0.0.0.0/tweets/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#create (for 127.0.0.1 at 2010-10-15 14:22:19) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"NUoBsbSR2xkZsjGa53qQ4DuDEkf8aIUmW1vIEv5nw7M=", "controller"=>"tweets", "tweet"=>{"text"=>"test from localhost"}}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTweet Create (0.2ms)[0m   [0;1mINSERT INTO `tweets` (`created_at`, `published`, `updated_at`, `text`, `user_id`, `status_id`) VALUES('2010-10-15 21:22:19', 0, '2010-10-15 21:22:19', 'test from localhost', 1, NULL)[0m
+  [4;35;1mTweet Update (0.5ms)[0m   [0mUPDATE `tweets` SET `updated_at` = '2010-10-15 21:22:19', `created_at` = '2010-10-15 21:22:19', `status_id` = 27479271744, `published` = 1, `user_id` = 1, `text` = 'test from localhost' WHERE `id` = 4[0m
+after_create response coordinatestruncatedfalsecreated_atFri Oct 15 21:22:19 +0000 2010favoritedfalsetexttest from localhostcontributorsid27479271744retweet_countgeoretweetedfalsein_reply_to_user_idusername30 Sumptinprofile_background_tiletrueprofile_sidebar_border_coloreeeeeeprofile_sidebar_fill_colorefefeflocationprofile_image_urlhttp://a0.twimg.com/profile_images/1116833904/images_normal.jpegcreated_atSat Sep 04 01:32:20 +0000 2010profile_link_colorff051afollow_request_sentfalseurlcontributors_enabledfalsefavourites_count0utc_offsetid186658203profile_use_background_imagetruelisted_count0followers_count1profile_text_color333333protectedfalselangenprofile_background_color131516notificationsfalseverifiedfalsegeo_enabledfalsedescriptiontime_zonefriends_count1profile_background_image_urlhttp://s.twimg.com/a/1286302838/images/themes/theme14/bg.gifstatuses_count9show_all_inline_mediafalsefollowingfalsescreen_nameShitIm30Sumptinsource<a href="http://thirty.heroku.com/" rel="nofollow">ShitIm30Sumptin</a>in_reply_to_screen_nameplacein_reply_to_status_id
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/tweets
+Completed in 460ms (DB: 5) | 302 Found [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-10-15 14:22:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Load (0.3ms)[0m   [0mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;36;1mTweet Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 90ms (View: 40, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-10-15 14:23:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Load (0.3ms)[0m   [0mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;36;1mTweet Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 163ms (View: 112, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-10-15 14:23:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 46ms (View: 15, DB: 2) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#logout (for 127.0.0.1 at 2010-10-15 14:23:10) [GET]
+  Parameters: {"action"=>"logout", "controller"=>"home"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/login
+Completed in 32ms (DB: 2) | 302 Found [http://0.0.0.0/logout]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#login (for 127.0.0.1 at 2010-10-15 14:23:11) [GET]
+  Parameters: {"action"=>"login", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/login
+Completed in 25ms (View: 17, DB: 1) | 200 OK [http://0.0.0.0/login]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#login (for 127.0.0.1 at 2010-10-15 14:25:50) [POST]
+  Parameters: {"name"=>"simeon", "commit"=>"Go", "action"=>"login", "authenticity_token"=>"NUoBsbSR2xkZsjGa53qQ4DuDEkf8aIUmW1vIEv5nw7M=", "controller"=>"home", "password"=>"[FILTERED]"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'simeon') LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/
+Completed in 35ms (DB: 2) | 302 Found [http://0.0.0.0/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-10-15 14:25:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 37ms (View: 6, DB: 2) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-10-15 14:25:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Load (0.3ms)[0m   [0mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;36;1mTweet Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 89ms (View: 39, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index to xml (for 127.0.0.1 at 2010-10-15 14:25:56) [GET]
+  Parameters: {"format"=>"xml", "action"=>"index", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Load (0.4ms)[0m   [0mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Completed in 49ms (View: 1, DB: 3) | 406 Not Acceptable [http://0.0.0.0/tweets.xml]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-10-15 14:26:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Load (0.3ms)[0m   [0;1mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;35;1mTweet Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 165ms (View: 114, DB: 5) | 200 OK [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#logout (for 127.0.0.1 at 2010-10-15 14:27:15) [GET]
+  Parameters: {"action"=>"logout", "controller"=>"home"}
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/login
+Completed in 50ms (DB: 4) | 302 Found [http://0.0.0.0/logout]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#login (for 127.0.0.1 at 2010-10-15 14:27:15) [GET]
+  Parameters: {"action"=>"login", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/login
+Completed in 108ms (View: 100, DB: 1) | 200 OK [http://0.0.0.0/login]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#login (for 127.0.0.1 at 2010-10-15 14:27:16) [POST]
+  Parameters: {"name"=>"simeon", "commit"=>"Go", "action"=>"login", "authenticity_token"=>"NUoBsbSR2xkZsjGa53qQ4DuDEkf8aIUmW1vIEv5nw7M=", "controller"=>"home", "password"=>"[FILTERED]"}
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'simeon') LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/
+Completed in 35ms (DB: 2) | 302 Found [http://0.0.0.0/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-10-15 14:27:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 46ms (View: 15, DB: 2) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-10-15 14:27:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Load (0.3ms)[0m   [0;1mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 116ms (View: 58, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#destroy (for 127.0.0.1 at 2010-10-15 14:27:23) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"NUoBsbSR2xkZsjGa53qQ4DuDEkf8aIUmW1vIEv5nw7M=", "id"=>"4", "controller"=>"tweets"}
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTweet Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mTweet Load (0.2ms)[0m   [0mSELECT * FROM `tweets` WHERE (`tweets`.`id` = 4) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTweet Destroy (0.2ms)[0m   [0mDELETE FROM `tweets` WHERE `id` = 4[0m
+after_destroy resource 'http://api.twitter.com/1/statuses/destroy/27479271744.json'
+  [4;36;1mSQL (0.8ms)[0m   [0;1mROLLBACK[0m
+Redirected to http://0.0.0.0:3000/tweets
+Completed in 191ms (DB: 5) | 302 Found [http://0.0.0.0/tweets/4]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#index (for 127.0.0.1 at 2010-10-15 14:27:23) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Load (0.3ms)[0m   [0mSELECT * FROM `tweets` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering tweets/index
+  [4;36;1mTweet Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 91ms (View: 40, DB: 4) | 200 OK [http://0.0.0.0/tweets]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TweetsController#new (for 127.0.0.1 at 2010-10-15 14:27:33) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tweets"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTweet Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tweets`[0m
+Rendering template within layouts/application
+Rendering tweets/new
+Completed in 72ms (View: 21, DB: 4) | 200 OK [http://0.0.0.0/tweets/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-15 14:27:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` ORDER BY name[0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 77ms (View: 43, DB: 3) | 200 OK [http://0.0.0.0/users]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-10-15 14:27:36) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 56ms (View: 23, DB: 2) | 200 OK [http://0.0.0.0/users/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-10-15 14:27:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 37ms (View: 6, DB: 2) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#logout (for 127.0.0.1 at 2010-10-15 14:27:40) [GET]
+  Parameters: {"action"=>"logout", "controller"=>"home"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/login
+Completed in 31ms (DB: 2) | 302 Found [http://0.0.0.0/logout]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#login (for 127.0.0.1 at 2010-10-15 14:27:40) [GET]
+  Parameters: {"action"=>"login", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/login
+Completed in 17ms (View: 8, DB: 1) | 200 OK [http://0.0.0.0/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-10-15 14:27:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/login
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 25ms (DB: 2) | 302 Found [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#login (for 127.0.0.1 at 2010-10-15 14:27:43) [GET]
+  Parameters: {"action"=>"login", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/login
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://0.0.0.0/login]

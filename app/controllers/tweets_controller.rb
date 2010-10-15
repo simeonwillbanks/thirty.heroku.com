@@ -49,6 +49,7 @@ class TweetsController < ApplicationController
     begin
       flash[:notice] = "Tweet has been destroyed."
       @tweet.destroy
+    # Want to rescue StandardError, no Exception
     rescue Exception => e
       flash[:notice] = e.message
     end
